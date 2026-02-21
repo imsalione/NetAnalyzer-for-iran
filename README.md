@@ -46,7 +46,7 @@
 
 ### روش ۱ — فایل Portable (توصیه‌شده، بدون نیاز به Python)
 
-1. به بخش [**Releases**](../../releases/latest) بروید
+1. به بخش [**Releases**](https://github.com/imsalione/NetAnalyzer-for-iran/releases/latest) بروید
 2. فایل `InternetMonitor_Portable.zip` را دانلود کنید
 3. فایل زیپ را در هر پوشه‌ای extract کنید
 4. روی `InternetMonitor.exe` دوبار کلیک کنید
@@ -66,8 +66,8 @@
 
 ```bash
 # ۱. دانلود پروژه
-git clone https://github.com/YOUR_USERNAME/NetAnalyzer.git
-cd NetAnalyzer
+git clone https://github.com/imsalione/NetAnalyzer-for-iran.git
+cd NetAnalyzer-for-iran
 
 # ۲. نصب وابستگی‌ها
 pip install -r requirements.txt
@@ -112,6 +112,8 @@ build_exe.bat
 
 فایل نهایی در مسیر `dist\InternetMonitor.exe` قرار می‌گیرد.
 
+> **نکته برای کاربران OneDrive:** اسکریپت `build_exe.bat` به‌صورت خودکار OneDrive را موقتاً pause می‌کند تا از خطای `PermissionError` جلوگیری شود.
+
 ---
 
 ## 📖 راهنمای استفاده
@@ -152,14 +154,15 @@ build_exe.bat
 ## 🏗️ ساختار پروژه
 
 ```
-NetAnalyzer/
+NetAnalyzer-for-iran/
 ├── main.py                     # نقطه ورود برنامه
 ├── requirements.txt            # وابستگی‌های Python
 ├── install.bat                 # نصب خودکار
 ├── build_exe.bat               # ساخت فایل EXE
+├── InternetMonitor.spec        # تنظیمات PyInstaller
 │
 └── monitor/
-    ├── core/                   # منطق اصلی (کد انگلیسی)
+    ├── core/                   # منطق اصلی
     │   ├── platform_monitor.py # پایش پلتفرم‌ها + تشخیص پروکسی
     │   ├── checker.py          # بررسی DNS / TCP / HTTP
     │   ├── classifier.py       # طبقه‌بندی هوشمند وضعیت
@@ -170,7 +173,7 @@ NetAnalyzer/
     │   ├── settings.py         # تنظیمات
     │   └── statistics.py       # آمار و آپتایم
     │
-    ├── ui/                     # رابط کاربری (فارسی)
+    ├── ui/                     # رابط کاربری فارسی
     │   ├── tray_app.py         # اپلیکیشن system tray
     │   └── minimal_window.py   # پنجره وضعیت + نمودار
     │
@@ -200,7 +203,7 @@ NetAnalyzer/
 4. Push کنید (`git push origin feature/my-feature`)
 5. یک Pull Request باز کنید
 
-برای گزارش باگ یا پیشنهاد ویژگی، از بخش [Issues](../../issues) استفاده کنید.
+برای گزارش باگ یا پیشنهاد ویژگی، از بخش [Issues](https://github.com/imsalione/NetAnalyzer-for-iran/issues) استفاده کنید.
 
 ---
 
@@ -213,6 +216,8 @@ NetAnalyzer/
 <div align="center">
 
 ساخته شده با ❤️ برای کاربران ایرانی
+
+[🐛 گزارش باگ](https://github.com/imsalione/NetAnalyzer-for-iran/issues) • [💡 پیشنهاد ویژگی](https://github.com/imsalione/NetAnalyzer-for-iran/issues/new)
 
 </div>
 
