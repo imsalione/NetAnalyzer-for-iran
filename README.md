@@ -1,4 +1,4 @@
-<div dir="rtl">
+<div align="center">
 
 # 🌐 NetAnalyzer — پایش هوشمند اتصال اینترنت
 
