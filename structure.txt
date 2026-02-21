@@ -1,12 +1,16 @@
 Folder PATH listing
 Volume serial number is 3A10-CC11
 C:.
+|   .gitignore
 |   build_exe.bat
 |   install.bat
 |   InternetMonitor.spec
+|   InternetMonitor_Portable.zip
+|   LICENSE
 |   main.py
 |   README.md
 |   requirements.txt
+|   run.bat
 |   structure.txt
 |   version_info.txt
 |   
@@ -44,15 +48,17 @@ C:.
 |           monitor_2026-02-16.log
 |           monitor_2026-02-17.log
 |           monitor_2026-02-18.log
+|           monitor_2026-02-20.log
+|           monitor_2026-02-21.log
 |           
 +---dist
-|   |   InternetMonitor.exe
-|   |   
-|   \---data
-|       \---logs
-|               monitor_2026-02-17.log
-|               monitor_2026-02-18.log
-|               
+|       InternetMonitor.exe
+|       
++---icons
+|       instagram.svg
+|       telegram.svg
+|       twitter.svg
+|       
 +---InternetMonitor_Portable
 |       InternetMonitor.exe
 |       README.md
@@ -67,6 +73,7 @@ C:.
 |   |   |   latency_window.py
 |   |   |   models.py
 |   |   |   platform_monitor.py
+|   |   |   proxy_detector.py
 |   |   |   settings.py
 |   |   |   statistics.py
 |   |   |   __init__.py
@@ -78,6 +85,7 @@ C:.
 |   |           latency_window.cpython-313.pyc
 |   |           models.cpython-313.pyc
 |   |           platform_monitor.cpython-313.pyc
+|   |           proxy_detector.cpython-313.pyc
 |   |           settings.cpython-313.pyc
 |   |           statistics.cpython-313.pyc
 |   |           __init__.cpython-313.pyc
@@ -295,6 +303,32 @@ C:.
     |       |           \---llhttp
     |       |                   LICENSE
     |       |                   
+    |       +---aiohttp_socks
+    |       |   |   connector.py
+    |       |   |   py.typed
+    |       |   |   utils.py
+    |       |   |   _deprecated.py
+    |       |   |   _errors.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   \---__pycache__
+    |       |           connector.cpython-313.pyc
+    |       |           utils.cpython-313.pyc
+    |       |           _deprecated.cpython-313.pyc
+    |       |           _errors.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---aiohttp_socks-0.11.0.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   REQUESTED
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
+    |       |           
     |       +---aiosignal
     |       |   |   py.typed
     |       |   |   __init__.py
@@ -6915,6 +6949,211 @@ C:.
     |       |   |   
     |       |   \---licenses
     |       |           LICENSE
+    |       |           
+    |       +---python_socks
+    |       |   |   py.typed
+    |       |   |   _abc.py
+    |       |   |   _errors.py
+    |       |   |   _helpers.py
+    |       |   |   _types.py
+    |       |   |   _version.py
+    |       |   |   __init__.py
+    |       |   |   
+    |       |   +---async_
+    |       |   |   |   _proxy_chain.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---anyio
+    |       |   |   |   |   _chain.py
+    |       |   |   |   |   _connect.py
+    |       |   |   |   |   _proxy.py
+    |       |   |   |   |   _resolver.py
+    |       |   |   |   |   _stream.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---v2
+    |       |   |   |   |   |   _chain.py
+    |       |   |   |   |   |   _connect.py
+    |       |   |   |   |   |   _proxy.py
+    |       |   |   |   |   |   _stream.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _chain.cpython-313.pyc
+    |       |   |   |   |           _connect.cpython-313.pyc
+    |       |   |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |   |           _stream.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _chain.cpython-313.pyc
+    |       |   |   |           _connect.cpython-313.pyc
+    |       |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |           _resolver.cpython-313.pyc
+    |       |   |   |           _stream.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---asyncio
+    |       |   |   |   |   _connect.py
+    |       |   |   |   |   _proxy.py
+    |       |   |   |   |   _resolver.py
+    |       |   |   |   |   _stream.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---v2
+    |       |   |   |   |   |   _chain.py
+    |       |   |   |   |   |   _connect.py
+    |       |   |   |   |   |   _proxy.py
+    |       |   |   |   |   |   _stream.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _chain.cpython-313.pyc
+    |       |   |   |   |           _connect.cpython-313.pyc
+    |       |   |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |   |           _stream.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _connect.cpython-313.pyc
+    |       |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |           _resolver.cpython-313.pyc
+    |       |   |   |           _stream.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---curio
+    |       |   |   |   |   _connect.py
+    |       |   |   |   |   _proxy.py
+    |       |   |   |   |   _resolver.py
+    |       |   |   |   |   _stream.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _connect.cpython-313.pyc
+    |       |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |           _resolver.cpython-313.pyc
+    |       |   |   |           _stream.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   +---trio
+    |       |   |   |   |   _connect.py
+    |       |   |   |   |   _proxy.py
+    |       |   |   |   |   _resolver.py
+    |       |   |   |   |   _stream.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   +---v2
+    |       |   |   |   |   |   _chain.py
+    |       |   |   |   |   |   _connect.py
+    |       |   |   |   |   |   _proxy.py
+    |       |   |   |   |   |   _stream.py
+    |       |   |   |   |   |   __init__.py
+    |       |   |   |   |   |   
+    |       |   |   |   |   \---__pycache__
+    |       |   |   |   |           _chain.cpython-313.pyc
+    |       |   |   |   |           _connect.cpython-313.pyc
+    |       |   |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |   |           _stream.cpython-313.pyc
+    |       |   |   |   |           __init__.cpython-313.pyc
+    |       |   |   |   |           
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _connect.cpython-313.pyc
+    |       |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |           _resolver.cpython-313.pyc
+    |       |   |   |           _stream.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _proxy_chain.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---sync
+    |       |   |   |   _chain.py
+    |       |   |   |   _connect.py
+    |       |   |   |   _proxy.py
+    |       |   |   |   _resolver.py
+    |       |   |   |   _stream.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   +---v2
+    |       |   |   |   |   _chain.py
+    |       |   |   |   |   _connect.py
+    |       |   |   |   |   _proxy.py
+    |       |   |   |   |   _ssl_transport.py
+    |       |   |   |   |   _stream.py
+    |       |   |   |   |   __init__.py
+    |       |   |   |   |   
+    |       |   |   |   \---__pycache__
+    |       |   |   |           _chain.cpython-313.pyc
+    |       |   |   |           _connect.cpython-313.pyc
+    |       |   |   |           _proxy.cpython-313.pyc
+    |       |   |   |           _ssl_transport.cpython-313.pyc
+    |       |   |   |           _stream.cpython-313.pyc
+    |       |   |   |           __init__.cpython-313.pyc
+    |       |   |   |           
+    |       |   |   \---__pycache__
+    |       |   |           _chain.cpython-313.pyc
+    |       |   |           _connect.cpython-313.pyc
+    |       |   |           _proxy.cpython-313.pyc
+    |       |   |           _resolver.cpython-313.pyc
+    |       |   |           _stream.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_connectors
+    |       |   |   |   abc.py
+    |       |   |   |   factory_async.py
+    |       |   |   |   factory_sync.py
+    |       |   |   |   http_async.py
+    |       |   |   |   http_sync.py
+    |       |   |   |   socks4_async.py
+    |       |   |   |   socks4_sync.py
+    |       |   |   |   socks5_async.py
+    |       |   |   |   socks5_sync.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           abc.cpython-313.pyc
+    |       |   |           factory_async.cpython-313.pyc
+    |       |   |           factory_sync.cpython-313.pyc
+    |       |   |           http_async.cpython-313.pyc
+    |       |   |           http_sync.cpython-313.pyc
+    |       |   |           socks4_async.cpython-313.pyc
+    |       |   |           socks4_sync.cpython-313.pyc
+    |       |   |           socks5_async.cpython-313.pyc
+    |       |   |           socks5_sync.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   +---_protocols
+    |       |   |   |   errors.py
+    |       |   |   |   http.py
+    |       |   |   |   socks4.py
+    |       |   |   |   socks5.py
+    |       |   |   |   __init__.py
+    |       |   |   |   
+    |       |   |   \---__pycache__
+    |       |   |           errors.cpython-313.pyc
+    |       |   |           http.cpython-313.pyc
+    |       |   |           socks4.cpython-313.pyc
+    |       |   |           socks5.cpython-313.pyc
+    |       |   |           __init__.cpython-313.pyc
+    |       |   |           
+    |       |   \---__pycache__
+    |       |           _abc.cpython-313.pyc
+    |       |           _errors.cpython-313.pyc
+    |       |           _helpers.cpython-313.pyc
+    |       |           _types.cpython-313.pyc
+    |       |           _version.cpython-313.pyc
+    |       |           __init__.cpython-313.pyc
+    |       |           
+    |       +---python_socks-2.8.1.dist-info
+    |       |   |   INSTALLER
+    |       |   |   METADATA
+    |       |   |   RECORD
+    |       |   |   top_level.txt
+    |       |   |   WHEEL
+    |       |   |   
+    |       |   \---licenses
+    |       |           LICENSE.txt
     |       |           
     |       +---pywin32_ctypes-0.2.3.dist-info
     |       |       INSTALLER
