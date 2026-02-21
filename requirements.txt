@@ -1,0 +1,7 @@
+# Internet Monitor v3.0 - Clean Rewrite
+# Minimal dependencies
+
+PyQt6>=6.5.0
+aiohttp>=3.9.0
+qasync>=0.24.0
+loguru>=0.7.0
